@@ -1,2 +1,3 @@
-# rails_services
-Expanded services for glitchwrks.com
+## rails_services -- Expanded Services for glitchwrks.com
+
+This project is a result of outgrowing the smaller [site_services Sinatra app](https://github.com/chapmajs/site_services) responsible for some of the dynamic features of glitchwrks.com. Thie original `site_services` app was intended to be a microservice for a few simple functions, but ended up with interactive user-facing features bolted on the side. Time to break it out into a proper Rails app!
