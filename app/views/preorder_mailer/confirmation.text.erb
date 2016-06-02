@@ -1,0 +1,19 @@
+You are receiving this email to confirm your preorder with The Glitch Works:
+
+Project: <%= @preorder.project_printable_name %>
+Name: <%= @preorder.name %>
+Email: <%= @preorder.email %>
+
+Boards Requested: <%= @preorder.boards %>
+Kits Requested: <%= @preorder.kits %>
+Assembled Units Requested: <%= @preorder.assembled %>
+
+If this is correct, please confirm your preorder with the following link:
+
+https://services.theglitchworks.net/preorders/confirm/<%= @preorder.confirmation_token %>
+
+If you did not fill out the preorder form and are receiving this email in error, no further action is required. The preorder will be dropped in 48 hours if no confirmation is received, and you will not receive further email contact from us.
+
+Thanks,
+
+The Glitch Works

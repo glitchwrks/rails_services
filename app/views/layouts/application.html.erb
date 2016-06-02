@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @page_title %></title>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <br>
+    <div class="navigation" align="center">
+      <a href="http://www.glitchwrks.com/updates.html">What's New</a> |
+      <a href="http://www.glitchwrks.com/8085projects.html">8085 Projects</a> |
+      <a href="http://www.glitchwrks.com/vintage.html">Vintage Computers</a> |
+      <a href="http://www.glitchwrks.com/coding.html">Coding</a> |
+      <a href="http://www.glitchwrks.com/services.html">Services</a> |
+      <a href="http://www.glitchwrks.com/contact/index.html">Contact</a>
+    </div>
+    <br>
+    <section>
+      <div class="pageview">
+        <div class="pageview-header">.:[<%= @page_title %>]:.</div>
+
+        <div class="content">
+          <div id="post">
+            <br/>
+            <%= yield %>
+            <br/><br/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br/><br/>
+    <div class="center">
+      Copyright (c) <%= Time.now.year %> The Glitch Works
+    </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+class ConfirmedPreorder < Preorder
+end

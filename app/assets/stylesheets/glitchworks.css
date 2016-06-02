@@ -1,0 +1,64 @@
+/* style.css -- glitchwrks.com style sheet */
+
+body {
+	font-family: monospace;
+	color: #CCCCCC; 
+	background: black;
+	font-size: 1em;
+}
+
+.pageview {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: #6B6B6B;
+}
+
+.pageview-header {
+	text-align: center;
+	width: 100%;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	background-color: #6B6B6B;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.codeblock-header {
+	background-color: #006BB3;
+}
+
+.content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+	text-align: justify;
+}
+
+.navigation {
+	font-size: 1.25em;
+}
+
+b { 
+	font-size: 1em;
+	font-weight: bold; 
+	color: white;
+}
+
+h1 { font-size: 2.0em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1em; }
+
+a:link { color: #00FF00; }
+a:visited { color: green; }
+a:hover { color: #00FF00; }
+a:active { color: #00FF00; }
+
+.center { text-align: center; }
+
+.full-width {
+	width: 100%;
+}
