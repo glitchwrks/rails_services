@@ -23,5 +23,7 @@ end
 group :development do
   gem 'spring'
   gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  #gem 'rbnacl-libsodium'
 end
 
