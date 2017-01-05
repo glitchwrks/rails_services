@@ -10,11 +10,11 @@ preload_app true
 timeout 30
 
 # Set up socket location
-listen "#{shared_dir}/sockets/unicorn.sock", :backlog => 64
+listen "/var/www/run/unicorn/rails_services.sock", :backlog => 64
 
 # Logging
-stderr_path "#{shared_dir}/log/unicorn.stderr.log"
-stdout_path "#{shared_dir}/log/unicorn.stdout.log"
+stderr_path "/var/log/unicorn/rails_services.stderr.log"
+stdout_path "/var/log/unicorn/rails_services.stdout.log"
 
 # Set master PID location
-pid "#{shared_dir}/pids/unicorn.pid"
+pid "/var/run/unicorn/rails_services.pid"
