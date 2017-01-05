@@ -11,6 +11,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Don't keep DB dumps
+*.sqldump*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
