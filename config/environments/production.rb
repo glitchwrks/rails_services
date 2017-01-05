@@ -91,4 +91,7 @@ Rails.application.configure do
     :port                 => Rails.application.secrets[:email]['port'],
     :enable_starttls_auto => true
   }
+
+  # Currently living at /ng on the server
+  config.relative_url_root = '/ng'
 end
