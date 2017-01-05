@@ -1,0 +1,41 @@
+table {
+  border: 1px solid;
+  border-color: #6B6B6B;
+}
+
+thead {
+  color: white;
+  background-color: #6B6B6B;
+  text-align: center;
+}
+
+tr:hover.hilight-row {
+  background-color: #161616;
+}
+
+td.bound-cell {
+  border: 1px solid;
+  border-color: #313131;
+}
+
+table.centered-wide {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr.success {
+  background-color: #030;
+}
+
+tr:hover.success {
+  background-color: #050;
+}
+
+tr.failure {
+  background-color: #300;
+}
+
+tr:hover.failure {
+  background-color: #500;
+}

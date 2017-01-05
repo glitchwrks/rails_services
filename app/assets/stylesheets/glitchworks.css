@@ -54,6 +54,7 @@ h3 { font-size: 1em; }
 
 a:link { color: #00FF00; }
 a:visited { color: green; }
+a:visited.nav { color: #00FF00; }
 a:hover { color: #00FF00; }
 a:active { color: #00FF00; }
 
