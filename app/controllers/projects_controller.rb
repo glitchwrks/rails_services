@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_filter :load_project, :only => :disabled
+  before_action :load_project, :only => :disabled
 
   def disabled
   end
@@ -7,6 +7,6 @@ class ProjectsController < ApplicationController
   private
 
   def load_project
-    @project = Project.find(params[:id])
+    @project = Project.find_by!(:name => params[:id])
   end
 end

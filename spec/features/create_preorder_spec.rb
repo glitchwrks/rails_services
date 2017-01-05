@@ -6,7 +6,7 @@ feature 'Create a preorder for a project' do
     let!(:project) { FactoryGirl.create(:enabled_project) }
 
     before(:each) do
-      visit new_project_preorder_path(project)
+      visit new_preorder_path(:project => project.name)
     end
 
     scenario 'User submits a blank form' do
@@ -55,13 +55,13 @@ feature 'Create a preorder for a project' do
     let!(:disabled_project) { FactoryGirl.create(:disabled_project) }
 
     scenario 'User tries to preorder a disabled project' do
-      visit new_project_preorder_path(disabled_project)
+      visit new_preorder_path(:project => disabled_project.name)
 
       expect(page).to have_text('The project you requested is currently disabled.')
     end
   end
 
   scenario 'User tries to preorder an invalid project' do
-    expect { visit new_project_preorder_path('invalid_project_id') }.to raise_exception(ActiveRecord::RecordNotFound)
+    expect { visit new_preorder_path('invalid_project_id') }.to raise_exception(ActiveRecord::RecordNotFound)
   end
 end

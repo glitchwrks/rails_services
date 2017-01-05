@@ -1,5 +1,5 @@
 class PreordersController < ApplicationController
-  before_filter :load_project, :only => [:new, :create, :success]
+  before_action :load_project, :only => [:new, :create, :success]
 
   def new
     @preorder = Preorder.new
@@ -10,7 +10,7 @@ class PreordersController < ApplicationController
 
     if @preorder.valid? && verify_recaptcha
       PreorderProcessorService.new(@preorder).execute
-      redirect_to success_project_preorders_path(@project)
+      redirect_to success_preorders_path(:project => @project.name)
     else
       render :new
     end
@@ -23,7 +23,7 @@ class PreordersController < ApplicationController
     @preorder = Preorder.find_by(:confirmation_token => params[:token])
     
     if @preorder.present?
-      @preorder.becomes!(ConfirmedPreorder).save!
+      @preorder.update_attributes(:confirmed => true)
     else
       render :invalid_token
     end
@@ -36,8 +36,8 @@ class PreordersController < ApplicationController
   end
 
   def load_project
-    @project = Project.find_by!(:id => params[:project_id])
-    redirect_to disabled_project_path(@project) unless @project.enabled?
+    @project = Project.find_by!(:name => params[:project])
+    redirect_to disabled_project_path(@project.name) unless @project.enabled?
   end
 
   def verify_recaptcha

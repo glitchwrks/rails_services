@@ -6,7 +6,9 @@
 <p>Please fill out the following information to preorder one or more <%= @project.printable_name %> boards, parts kits, and/or fully assembled units. You will receive a confirmation email to the address provided. If you do not click the confirmation link in the email within 48 hours, your order will be dropped! Please <a href='/contact'>contact us</a> if there are any problems or questions.</p>
 <br/>
 
-<%= simple_form_for [@project, @preorder] do |f| %>
+<%= simple_form_for @preorder do |f| %>
+  <%= hidden_field_tag :project, @project.name %>
+  
   <%= f.input :name, :label => 'Your name' %><br />
   <%= f.input :email, :label => 'Your email address' %><br />
   <%= f.input :boards, :label => 'Quantity bare boards' %><br />

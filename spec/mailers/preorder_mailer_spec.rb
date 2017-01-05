@@ -11,6 +11,6 @@ RSpec.describe PreorderMailer do
     it {expect(email.from).to include('noreply@glitchwrks.com') }
     it {expect(email.reply_to).to include('noreply@glitchwrks.com') }
 
-    it {expect(email.body).to include("https://services.theglitchworks.net/preorders/confirm/#{preorder.confirmation_token}") }
+    it {expect(email.body).to include("https://services.theglitchworks.net/preorders/confirm?token=#{preorder.confirmation_token}") }
   end
 end
