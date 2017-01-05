@@ -12,7 +12,7 @@ gem 'unicorn'
 gem 'simple_form'
 gem 'sanitize'
 gem 'uuidtools'
-
+ 
 group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
