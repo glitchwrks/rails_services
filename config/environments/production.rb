@@ -94,4 +94,5 @@ Rails.application.configure do
 
   # Currently living at /ng on the server
   config.relative_url_root = '/ng'
+  config.root_directory = '/ng'
 end
