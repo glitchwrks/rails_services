@@ -21,3 +21,5 @@
 
 /config/database.yml
 /config/secrets.yml
+
+/public/assets/**
