@@ -2,15 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '5.0.1'
 gem 'mysql2'
-gem 'jquery-rails'
+gem 'unicorn'
 
 #gem 'jbuilder', '~> 2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
 
 gem 'simple_form'
 gem 'sanitize'
