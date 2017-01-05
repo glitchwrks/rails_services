@@ -1,2 +1,0 @@
-class ConfirmedPreorder < Preorder
-end

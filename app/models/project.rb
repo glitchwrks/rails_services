@@ -1,4 +1,4 @@
-class Project < ActiveRecord::Base
+class Project < ApplicationRecord
   has_many :preorders
 
   validates :name, :presence => true, :uniqueness => true

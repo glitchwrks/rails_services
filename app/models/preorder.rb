@@ -1,6 +1,4 @@
-class Preorder < ActiveRecord::Base
-  self.inheritance_column = :sti_type
-
+class Preorder < ApplicationRecord
   belongs_to :project
 
   validates :email, :presence => true

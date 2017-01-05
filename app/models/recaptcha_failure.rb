@@ -1,2 +1,2 @@
-class RecaptchaFailure < ActiveRecord::Base
+class RecaptchaFailure < ApplicationRecord
 end

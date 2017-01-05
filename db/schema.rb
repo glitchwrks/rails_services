@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,35 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525012656) do
+ActiveRecord::Schema.define(version: 20170105032837) do
 
-  create_table "preorders", force: :cascade do |t|
-    t.integer  "project_id",         limit: 4
-    t.string   "name",               limit: 255
-    t.string   "email",              limit: 255
-    t.string   "boards",             limit: 255
-    t.string   "kits",               limit: 255
-    t.string   "assembled",          limit: 255
-    t.string   "address",            limit: 255
-    t.string   "confirmation_token", limit: 255
-    t.string   "sti_type",           limit: 255
+  create_table "preorders", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "project_id",         limit: 36
+    t.string   "name"
+    t.string   "email"
+    t.string   "boards"
+    t.string   "kits"
+    t.string   "assembled"
+    t.string   "address"
+    t.string   "confirmation_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "confirmed"
+    t.index ["project_id"], name: "index_preorders_on_project_id", using: :btree
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string   "name",           limit: 255
-    t.string   "printable_name", limit: 255
+  create_table "projects", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.string   "printable_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "enabled"
   end
 
-  create_table "recaptcha_failures", force: :cascade do |t|
-    t.string   "challenge_timestamp", limit: 255
-    t.string   "hostname",            limit: 255
-    t.string   "address",             limit: 255
-    t.string   "error_codes",         limit: 255
+  create_table "recaptcha_failures", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "challenge_timestamp"
+    t.string   "hostname"
+    t.string   "address"
+    t.string   "error_codes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
