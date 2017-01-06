@@ -20,11 +20,15 @@ RSpec.describe Preorder do
   end
 
   describe 'validates only one preorder per project per email' do
-    let!(:first_preorder) { FactoryGirl.create(:preorder, :email => 'dupe@glitchwrks.com', :boards => 1) }
-    let!(:second_preorder) { FactoryGirl.build(:preorder, :email => 'dupe@glitchwrks.com', :boards => 1) }
+    let!(:first_project) { FactoryGirl.create(:project) }
+    let!(:second_project) { FactoryGirl.create(:project) }
+    let!(:first_preorder) { FactoryGirl.create(:preorder, :project => first_project, :email => 'dupe@glitchwrks.com', :boards => 1) }
+    let!(:second_preorder) { FactoryGirl.build(:preorder, :project => first_project, :email => 'dupe@glitchwrks.com', :boards => 1) }
+    let!(:third_preorder) { FactoryGirl.build(:preorder, :project => second_project, :email => 'dupe@glitchwrks.com', :boards => 1) }
 
     it { expect(first_preorder).to be_valid }
     it { expect(second_preorder).to be_invalid }
+    it { expect(third_preorder).to be_valid }
 
     it 'should add a meaningful error to email' do
       second_preorder.validate
