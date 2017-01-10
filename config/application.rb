@@ -2,15 +2,13 @@ require_relative 'boot'
 
 require "rails"
 
-# Pick the frameworks you want:
+# Pull in only the bits we want
 require "active_model/railtie"
-#require "active_job/railtie"
 require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
-#require "rails/test_unit/railtie"
 
 
 # Require the gems listed in Gemfile, including any gems
@@ -25,7 +23,7 @@ module RailsServices
     # Autoload services
     config.autoload_paths += Dir["#{Rails.root}/app/services"]
 
-    # Enable flash messages, required in Rails 5+
+    # Enable flash messages, these will be on the request since we're not using sessions
     config.middleware.use ActionDispatch::Flash
 
     # Disable cookies, we don't use them here
