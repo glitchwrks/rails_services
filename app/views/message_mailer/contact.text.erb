@@ -1,0 +1,1 @@
+<% if @message.subject_contains_html? %><%= "*** WARNING: Original subject contained HTML, which was stripped! ***\n\n" %><% end %><% if @message.content_contains_html? %><%= "*** WARNING: Original message contained HTML, which was stripped! ***\n\n" %><% end %><%= @message.sanitized_content %>
