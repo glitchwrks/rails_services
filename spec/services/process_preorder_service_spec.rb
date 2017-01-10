@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe PreorderProcessorService do
+RSpec.describe ProcessPreorderService do
   let!(:preorder) { FactoryGirl.build(:preorder_with_enabled_project) }
-  let(:service) { PreorderProcessorService.new(preorder) }
+  let(:service) { ProcessPreorderService.new(preorder) }
 
   it 'should generate a confirmation token' do
     expect(preorder.confirmation_token).to be_blank

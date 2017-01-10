@@ -9,7 +9,7 @@ class PreordersController < ApplicationController
     @preorder = Preorder.new(preorder_parameters.merge(:address => request.remote_ip, :project => @project))
 
     if @preorder.valid? && verify_recaptcha
-      PreorderProcessorService.new(@preorder).execute
+      ProcessPreorderService.new(@preorder).execute
       redirect_to success_preorders_path(:project => @project.name)
     else
       render :new

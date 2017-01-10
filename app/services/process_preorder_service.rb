@@ -1,7 +1,7 @@
 require 'securerandom'
 require 'sanitize'
 
-class PreorderProcessorService
+class ProcessPreorderService
   def initialize(preorder)
     @preorder = preorder
   end
