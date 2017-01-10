@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Minimal data needed to develop with.
+
+# Project related seeds
+Project.new(:name => 'test_project', :enabled => true)
+
+# Contact Us related seeds
+BooleanSetting.create(:name => 'save_failed_messages', :description => 'Save messages that fail spam check', :value => 'true')
+BooleanSetting.create(:name => 'save_suspicious_messages', :description => 'Save messages containing HTML', :value => 'true')
+StringSetting.create(:name => 'contact_email', :description => 'Email destination for contact messages', :value => 'contact_test@glitchwrks.com')

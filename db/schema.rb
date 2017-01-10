@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105032837) do
+ActiveRecord::Schema.define(version: 20170108213620) do
+
+  create_table "application_settings", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "value"
+    t.string   "sti_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["name"], name: "index_application_settings_on_name", using: :btree
+  end
+
+  create_table "messages", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "subject"
+    t.string   "check"
+    t.text     "content",    limit: 65535
+    t.string   "address"
+    t.boolean  "suspicious"
+    t.boolean  "failed"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "preorders", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "project_id",         limit: 36

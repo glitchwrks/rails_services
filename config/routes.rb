@@ -11,6 +11,12 @@ Rails.application.routes.draw do
 
     root :to => proc { [404, {}, ['Not found.']] }
 
+    resources :messages, :only => [:new, :create] do
+      collection do
+        get :success
+      end
+    end
+
     resources :projects, :only => [] do
       member do
         get :disabled
