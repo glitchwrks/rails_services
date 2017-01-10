@@ -21,6 +21,7 @@ group :test do
 end
 
 group :development do
+  gem 'awesome_print'
   gem 'spring'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
