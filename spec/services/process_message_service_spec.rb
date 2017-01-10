@@ -34,6 +34,11 @@ RSpec.describe ProcessMessageService do
       expect_any_instance_of(MessageMailer).to receive(:contact).with(processed_message)
       service.execute
     end
+
+    it 'should not persist the message if configured not to save_suspicious_messages' do
+      BooleanSetting.find_by(:name => 'save_suspicious_messages').update_attributes(:value => 'false')
+      expect(processed_message).not_to be_persisted
+    end
   end
 
   describe 'with a spammy message' do
@@ -46,6 +51,11 @@ RSpec.describe ProcessMessageService do
     it 'should not send the message' do
       expect_any_instance_of(MessageMailer).not_to receive(:contact)
       service.execute
+    end
+
+    it 'should not persist the message if configured not to save_failed_messages' do
+      BooleanSetting.find_by(:name => 'save_failed_messages').update_attributes(:value => 'false')
+      expect(processed_message).not_to be_persisted
     end
   end
 end
