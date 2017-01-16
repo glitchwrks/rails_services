@@ -30,6 +30,9 @@ module RailsServices
     config.middleware.delete ActionDispatch::Cookies
     config.middleware.delete ActionDispatch::Session::CookieStore
 
+    # No session, so don't bother with CSRF tokens
+    config.action_controller.allow_forgery_protection = false
+
     config.active_record.primary_key = :uuid
   end
 end
