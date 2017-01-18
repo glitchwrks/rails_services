@@ -22,9 +22,10 @@ end
 
 group :development do
   gem 'awesome_print'
+  gem 'bcrypt_pbkdf'
   gem 'spring'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  #gem 'rbnacl-libsodium'
+  gem 'rbnacl-libsodium'
 end
 
