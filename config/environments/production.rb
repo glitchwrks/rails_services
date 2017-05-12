@@ -85,8 +85,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :user_name            => Rails.application.secrets[:email]['username'],
     :password             => Rails.application.secrets[:email]['password'],
-    :address              => 'smtp.sendgrid.net',
-    :domain               => 'smtp.sendgrid.net',
+    :address              => 'mail.theglitchworks.net',
+    :domain               => 'mail.theglitchworks.net',
     :port                 => Rails.application.secrets[:email]['port'],
     :enable_starttls_auto => true
   }
