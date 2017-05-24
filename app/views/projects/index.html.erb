@@ -1,0 +1,27 @@
+<% @page_title = "All Active Projects" %>
+
+<p>This is a list of all active projects, their creation dates, and the number of confirmed preorders associated with them. Click the Sign Up for Preorder link to add your information to the preorder for that specific project.</p>
+
+<p>When enough confirmed preorders exist to meet the price target for a project, the preorder will be closed and you will receive an email at the address you used to confirm your preorder with further instructions. There is no financial obligation until the preorder closes and you agree to the price and terms specified in the email. If you have any questions please <%= link_to 'contact us', new_message_path %>.</p>
+
+<br />
+<table class='centered-wide'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created</th>
+      <th>Confirmed Preorders</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr class='hilight-row'>
+        <td><%= project.printable_name %></td>
+        <td align='right'><%= project.created_at.to_date %></td>
+        <td align='right'><%= project.confirmed_preorders.size %></td>
+        <td><%= link_to 'Sign Up for Preorder', new_preorder_path(:project => project.name) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

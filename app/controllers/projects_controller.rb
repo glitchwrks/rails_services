@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
   def disabled
   end
 
+  def index
+    @projects = Project.where(:enabled => true)
+  end
+
   private
 
   def load_project

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :projects, :only => [] do
+    resources :projects, :only => [:index] do
       member do
         get :disabled
       end
