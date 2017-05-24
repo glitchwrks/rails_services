@@ -3,7 +3,7 @@
 
 <%= base_error_explanation @preorder %>
 
-<p>Please fill out the following information to preorder one or more <%= @project.printable_name %> boards, parts kits, and/or fully assembled units. You will receive a confirmation email to the address provided. If you do not click the confirmation link in the email within 48 hours, your order will be dropped! Please <a href='/contact'>contact us</a> if there are any problems or questions.</p>
+<p>Please fill out the following information to preorder one or more <%= @project.printable_name %> boards, parts kits, and/or fully assembled units. You will receive a confirmation email to the address provided. If you do not click the confirmation link in the email within 48 hours, your order will be dropped! Please <%= link_to 'contact us', new_message_path %> if there are any problems or questions.</p>
 <br/>
 
 <%= simple_form_for @preorder do |f| %>
