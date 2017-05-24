@@ -9,6 +9,8 @@ class Preorder < ApplicationRecord
 
   delegate :printable_name, :to => :project, :prefix => true
 
+  scope :confirmed, lambda { where(:confirmed => true) }
+
   private
 
   def at_least_one_quantity
