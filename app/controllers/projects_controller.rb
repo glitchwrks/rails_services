@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.where(:enabled => true)
+    @projects = Project.where(:enabled => true).order(:printable_name)
   end
 
   private
