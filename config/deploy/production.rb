@@ -9,8 +9,7 @@ set :unicorn_config_path, "#{current_path}/config/unicorn.rb"
 set :unicorn_pid, "/var/run/unicorn/rails_services.pid"
 set :linked_files, %w{config/database.yml config/secrets.yml}
 
-after 'deploy', 'unicorn:stop'
-after 'deploy', 'unicorn:start'
+after 'deploy', 'unicorn:restart'
 
 # server-based syntax
 # ======================
