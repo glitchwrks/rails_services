@@ -4,18 +4,17 @@ SimpleForm.setup do |config|
   # Customized wrapper for Glitchworks forms
   config.wrappers :default, :class => :simple_form,
     :hint_class => :field_with_hint, :error_class => :field_with_errors do |b|
+      b.use :html5
 
-    b.use :html5
+      b.optional :maxlength
+      b.optional :pattern
+      b.optional :min_max
+      b.optional :readonly
 
-    b.optional :maxlength
-    b.optional :pattern
-    b.optional :min_max
-    b.optional :readonly
-
-    ## Inputs
-    b.use :label, :wrap_with => { :tag => :div }
-    b.use :input, :size => 30, :wrap_with => { :tag => :div }
-    b.use :error, wrap_with: { :tag => :span, :class => :error }
+      ## Inputs
+      b.use :label, :wrap_with => { :tag => :div }
+      b.use :input, :size => 30, :wrap_with => { :tag => :div }
+      b.use :error, :wrap_with => { :tag => :span, :class => :error }
   end
 
   # The default wrapper to be used by the FormBuilder.
