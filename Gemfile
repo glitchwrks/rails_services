@@ -4,6 +4,9 @@ gem 'rails', '5.0.1'
 gem 'mysql2'
 gem 'unicorn'
 
+# Bring in pkg-config for libxslt on OpenBSD
+gem 'pkg-config'
+
 #gem 'jbuilder', '~> 2.0'
 
 # Use ActiveModel has_secure_password
