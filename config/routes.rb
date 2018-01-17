@@ -29,5 +29,16 @@ Rails.application.routes.draw do
         get :confirm
       end
     end
+
+    resources :testfdc_results, :only => [:index]
+
+    namespace :api do
+      resources :testfdc_notes, :only => [:index, :create]
+      resources :testfdc_results, :only => [:index] do
+        member do
+          get :approve
+        end
+      end
+    end
   end
 end

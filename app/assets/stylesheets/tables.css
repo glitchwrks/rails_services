@@ -9,6 +9,10 @@ thead {
   text-align: center;
 }
 
+thead td {
+  background-color: #000;
+}
+
 tr:hover.hilight-row {
   background-color: #161616;
 }

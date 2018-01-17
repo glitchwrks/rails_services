@@ -44,6 +44,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
     awesome_print (1.7.0)
+    bcrypt (3.1.11)
     bcrypt_pbkdf (1.0.0)
     builder (3.2.2)
     capistrano (3.7.1)
@@ -156,6 +157,7 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    rubygems-update (2.6.13)
     sanitize (4.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
@@ -196,6 +198,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bcrypt (~> 3.1.7)
   bcrypt_pbkdf
   capistrano-rails
   capistrano3-unicorn
@@ -206,6 +209,7 @@ DEPENDENCIES
   rails (= 5.0.1)
   rbnacl-libsodium
   rspec-rails (~> 3.0)
+  rubygems-update (~> 2.6.13)
   sanitize
   shoulda-matchers (~> 3.1)
   simple_form

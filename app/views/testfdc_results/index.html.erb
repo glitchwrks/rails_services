@@ -1,0 +1,82 @@
+<% @page_title = "TestFDC Results Registry" %>
+
+<p>This page contains a listing of motherboards and/or floppy controllers that have been tested with Dave Dunfield's <%= link_to 'TESTFDC program', 'http://www.classiccmp.org/dunfield/img54306/pcfdc.txt' %> His registry seems to be in an unmaintaned state, so we've put this one together to try and keep the registry updated. As with Dave's original registry, there is no guarantee that this information is correct.</p>
+
+<h2>Useful Information</h2>
+
+<p>All mainboards should pass the 'D' tests - these are required for standard PC formats.</p>
+
+<p>A mainboard that fails all 'S' tests will not be able to read or recreate single-density disks, which account for a significant portion of older non-
+PC formats.</p>
+
+<p>A mainboard that passes the 250 and 500kpbs 'S' tests, but fails the 300kbps 'S' test will not be able to handle single-density with a 1.2M 5.25" HD drive (the most common 5.25" drive types in AT and later machines), however it will be able to do it if you install a DD drive. (Use of a DD drive is recommended for SD/DD formats anyway, even if the HD setup supports it).</p>
+
+<p>The 'X' test (Double-Density with 128 bytes sectors) checks a capability that is used by very few disk formats, and for most people, not having it will not be a significant drawback. (Which is good, because the original NEC-765 PC controller, and most later chips based on this design don't support it).</p>
+
+<h2>Interpreting The Results Registry Table</h2>
+
+<pre>
+S = Single Density                              P = Passed
+D = Double Density                              F = Failed
+X = Double Density / 128 byte sectors           N = Not tested
+</pre>
+
+<br />
+<table class='centered-wide'>
+  <thead>
+    <tr>
+      <td colspan='4'></td>
+      <th colspan='9'>Data Rate</th>
+    </tr>
+    <tr>
+      <td colspan='4'></td>
+      <th colspan='3'>250</th>
+      <th colspan='3'>300</th>
+      <th colspan='3'>500</th>
+    </tr>
+    <tr>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>FDC Chip</th>
+      <th>Class</th>
+      <th>S</th>
+      <th>D</th>
+      <th>X</th>
+      <th>S</th>
+      <th>D</th>
+      <th>X</th>
+      <th>S</th>
+      <th>D</th>
+      <th>X</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @testfdc_results.each do |result| %>
+      <tr class='hilight-row'>
+        <td><%= result.manufacturer %></td>
+        <td><%= result.model %></td>
+        <td><%= result.fdc_chip %></td>
+        <td><%= result.hardware_class %></td>
+        <td class='center'><%= test_result(result.fm_250) %></td>
+        <td class='center'><%= test_result(result.mfm_250) %></td>
+        <td class='center'><%= test_result(result.mfm_250_128) %></td>
+        <td class='center'><%= test_result(result.fm_300) %></td>
+        <td class='center'><%= test_result(result.mfm_300) %></td>
+        <td class='center'><%= test_result(result.mfm_300_128) %></td>
+        <td class='center'><%= test_result(result.fm_500) %></td>
+        <td class='center'><%= test_result(result.mfm_500) %></td>
+        <td class='center'><%= test_result(result.mfm_500_128) %></td>
+        <td class='center'><%= result.note.number if result.note.present? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Notes</h2>
+
+<ol>
+  <% @notes.each do |note| %>
+    <li><%= note.description %></li>
+  <% end %>
+</ol>

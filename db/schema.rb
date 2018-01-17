@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170108213620) do
+ActiveRecord::Schema.define(version: 20170829160527) do
 
   create_table "application_settings", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
@@ -65,6 +65,42 @@ ActiveRecord::Schema.define(version: 20170108213620) do
     t.string   "error_codes"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "testfdc_notes", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "number"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "testfdc_results", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "manufacturer"
+    t.string   "model"
+    t.string   "fdc_chip"
+    t.string   "hardware_class"
+    t.boolean  "fm_250"
+    t.boolean  "fm_300"
+    t.boolean  "fm_500"
+    t.boolean  "mfm_250"
+    t.boolean  "mfm_300"
+    t.boolean  "mfm_500"
+    t.boolean  "mfm_250_128"
+    t.boolean  "mfm_300_128"
+    t.boolean  "mfm_500_128"
+    t.boolean  "approved"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "note_id"
+    t.index ["note_id"], name: "index_testfdc_results_on_note_id", using: :btree
+  end
+
+  create_table "users", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "login"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.boolean  "api_access"
   end
 
 end
