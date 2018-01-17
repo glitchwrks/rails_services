@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829160527) do
+ActiveRecord::Schema.define(version: 20180117213837) do
 
   create_table "application_settings", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
@@ -89,9 +89,10 @@ ActiveRecord::Schema.define(version: 20170829160527) do
     t.boolean  "mfm_300_128"
     t.boolean  "mfm_500_128"
     t.boolean  "approved"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "note_id"
+    t.text     "initial_report_notes", limit: 65535
     t.index ["note_id"], name: "index_testfdc_results_on_note_id", using: :btree
   end
 

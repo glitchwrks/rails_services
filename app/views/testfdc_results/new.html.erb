@@ -1,0 +1,77 @@
+<% @page_title = 'Add Your TestFDC Results' %>
+
+<%= base_error_explanation @testfdc_result %>
+
+<p>Please fill out as much information as you have from your TestFDC run. Leave untested modes blank. Add any relevant notes in the space provided</p>
+
+<p>Submissions are hand-approved and will not appear in the registry immediately.</p>
+
+<%= simple_form_for @testfdc_result do |f| %>  
+  <h2>General Information</h2>
+
+  <%= f.input :manufacturer, :label => 'Hardware manufacturer' %><br />
+  <%= f.input :model, :label => 'Hardware model' %><br />
+  <%= f.input :fdc_chip, :label => 'FDC controller chip' %><br />
+  <%= f.input :hardware_class, :label => 'Hardware class (AT, ATX, ISA card, etc.)' %><br />
+
+  <h2>250 kbps Data Rate</h2>
+
+  <table class='noborder'>
+    <tr>
+      <td>Single Density (FM):</td>
+      <td><%= f.input :fm_250, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+    <tr>
+      <td>Double Density (MFM):</td>
+      <td><%= f.input :mfm_250, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+    <tr>
+      <td>Double Density (MFM) with 128 Byte Sectors:</td>
+      <td><%= f.input :mfm_250_128, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+  </table>
+
+  <h2>300 kbps Data Rate</h2>
+
+  <table class='noborder'>
+    <tr>
+      <td>Single Density (FM):</td>
+      <td><%= f.input :fm_300, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+    <tr>
+      <td>Double Density (MFM):</td>
+      <td><%= f.input :mfm_300, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+    <tr>
+      <td>Double Density (MFM) with 128 Byte Sectors:</td>
+      <td><%= f.input :mfm_300_128, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+  </table>
+
+  <h2>500 kbps Data Rate</h2>
+
+  <table class='noborder'>
+    <tr>
+      <td>Single Density (FM):</td>
+      <td><%= f.input :fm_500, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+    <tr>
+      <td>Double Density (MFM):</td>
+      <td><%= f.input :mfm_500, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+    <tr>
+      <td>Double Density (MFM) with 128 Byte Sectors:</td>
+      <td><%= f.input :mfm_500_128, :label => false, :as => :radio_buttons, :collection => TestfdcResult::RESULT_OPTIONS, :checked => TestfdcResult::NOT_TESTED%></td>
+    </tr>
+  </table>
+
+  <h2>Additional Notes</h2>
+
+  <p>Notes provided here will be distilled down and turned into footnote-style notes, as seen in the main registry table.</p>
+
+  <%= f.input :initial_report_notes, :label => false, :input_html => { :class => 'full-width', :rows => 20 } %>
+
+  <br />
+
+  <%= f.button :submit, 'Submit your TestFDC Results' %>
+<% end %>

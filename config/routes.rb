@@ -30,7 +30,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :testfdc_results, :only => [:index]
+    resources :testfdc_results, :only => [:index, :new, :create] do
+      collection do
+        get :success
+      end
+    end
 
     namespace :api do
       resources :testfdc_notes, :only => [:index, :create]
