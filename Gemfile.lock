@@ -157,7 +157,6 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    rubygems-update (2.6.13)
     sanitize (4.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
@@ -209,7 +208,6 @@ DEPENDENCIES
   rails (= 5.0.1)
   rbnacl-libsodium
   rspec-rails (~> 3.0)
-  rubygems-update (~> 2.6.13)
   sanitize
   shoulda-matchers (~> 3.1)
   simple_form
