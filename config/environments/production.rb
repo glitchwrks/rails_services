@@ -22,6 +22,7 @@ Rails.application.configure do
 
   # Serve static files, for now
   config.public_file_server.enabled = true
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.compress = false
