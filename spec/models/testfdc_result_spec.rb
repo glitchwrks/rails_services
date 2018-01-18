@@ -12,5 +12,31 @@ RSpec.describe TestfdcResult do
       testfdc_result.validate
       expect(testfdc_result.errors[:base]).to include('You submitted a blank report; you must fill in something!')
     end
+
+    describe '#result_string=' do
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').fm_250).to be_truthy }
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').mfm_250).to be_truthy }
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').mfm_250_128).to be_truthy }
+
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').fm_300).to be_truthy }
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').mfm_300).to be_truthy }
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').mfm_300_128).to be_truthy }
+
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').fm_500).to be_truthy }
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').mfm_500).to be_truthy }
+      it { expect(TestfdcResult.new(:result_string => 'PPP PPP PPP').mfm_500_128).to be_truthy }
+
+      it { expect(TestfdcResult.new(:result_string => 'FFF FFF FFF').fm_250).to be_falsey }
+      it { expect(TestfdcResult.new(:result_string => 'FFF FFF FFF').mfm_250).to be_falsey }
+      it { expect(TestfdcResult.new(:result_string => 'FFF FFF FFF').mfm_250_128).to be_falsey }
+
+      it { expect(TestfdcResult.new(:result_string => 'FFF NNN FFF').fm_300).to be_nil }
+      it { expect(TestfdcResult.new(:result_string => 'FFF NNN FFF').mfm_300).to be_nil }
+      it { expect(TestfdcResult.new(:result_string => 'FFF NNN FFF').mfm_300_128).to be_nil }
+
+      it { expect(TestfdcResult.new(:result_string => 'FFF FFF NNN').fm_500).to be_nil }
+      it { expect(TestfdcResult.new(:result_string => 'FFF FFF NNN').mfm_500).to be_nil }
+      it { expect(TestfdcResult.new(:result_string => 'FFF FFF NNN').mfm_500_128).to be_nil }
+    end
   end
 end
