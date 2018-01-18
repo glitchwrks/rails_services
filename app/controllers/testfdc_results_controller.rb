@@ -1,7 +1,7 @@
 class TestfdcResultsController < ApplicationController
 
   def index
-    @testfdc_results = TestfdcResult.where(:approved => true).to_a
+    @testfdc_results = TestfdcResult.where(:approved => true).order(:manufacturer).to_a
     @notes = TestfdcNote.order(:number).to_a
   end
 
