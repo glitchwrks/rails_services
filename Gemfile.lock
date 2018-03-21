@@ -73,7 +73,7 @@ GEM
       capybara (>= 2.3.0, < 2.8.0)
       json
     concurrent-ruby (1.0.4)
-    crass (1.0.2)
+    crass (1.0.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     factory_girl (4.8.0)
@@ -104,7 +104,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    nokogumbo (1.4.10)
+    nokogumbo (1.5.0)
       nokogiri
     pkg-config (1.2.9)
     public_suffix (2.0.4)
@@ -157,10 +157,10 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    sanitize (4.4.0)
+    sanitize (4.6.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4.1)
+      nokogumbo (~> 1.4)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     simple_form (3.3.1)
@@ -208,7 +208,7 @@ DEPENDENCIES
   rails (= 5.0.1)
   rbnacl-libsodium
   rspec-rails (~> 3.0)
-  sanitize
+  sanitize (~> 4.6.3)
   shoulda-matchers (~> 3.1)
   simple_form
   spring

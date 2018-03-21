@@ -13,7 +13,7 @@ gem 'pkg-config'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'simple_form'
-gem 'sanitize'
+gem 'sanitize', '~> 4.6.3'
 gem 'uuidtools'
 gem 'bcrypt', '~> 3.1.7'
  
