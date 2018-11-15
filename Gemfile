@@ -30,6 +30,7 @@ group :development do
   gem 'spring'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'capistrano-rvm'
   gem 'rbnacl-libsodium'
 end
 
