@@ -20,7 +20,7 @@ class RecaptchaVerificationService
 
   def build_query
     @query = {
-      :secret => Rails.application.secrets[:recaptcha]['preorder']['secret_key'],
+      :secret => Rails.application.secrets[:recaptcha][:preorder][:secret_key],
       :response => @response,
       :remoteip => @address
     }

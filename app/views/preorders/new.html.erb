@@ -15,7 +15,7 @@
   <%= f.input :kits, :label => 'Quantity parts kits (excludes boards)' %><br />
   <%= f.input :assembled, :label => 'Quantity fully assembled units' %><br />
 
-  <div class='g-recaptcha' data-sitekey='<%= Rails.application.secrets[:recaptcha]['preorder']['site_key'] %>' data-theme='dark'></div>
+  <div class='g-recaptcha' data-sitekey='<%= Rails.application.secrets[:recaptcha][:preorder][:site_key] %>' data-theme='dark'></div>
   <br />
 
   <%= f.button :submit, 'Create Preorder' %>

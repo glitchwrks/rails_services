@@ -84,11 +84,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    :user_name            => Rails.application.secrets[:email]['username'],
-    :password             => Rails.application.secrets[:email]['password'],
+    :user_name            => Rails.application.secrets[:email][:username],
+    :password             => Rails.application.secrets[:email][:password],
     :address              => 'mail.theglitchworks.net',
     :domain               => 'mail.theglitchworks.net',
-    :port                 => Rails.application.secrets[:email]['port'],
+    :port                 => Rails.application.secrets[:email][:port],
     :enable_starttls_auto => true
   }
 
