@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Create a preorder for a project' do
   
   context 'with an enabled project' do
-    let!(:project) { FactoryGirl.create(:enabled_project) }
+    let!(:project) { FactoryBot.create(:enabled_project) }
 
     before(:each) do
       visit new_preorder_path(:project => project.name)
@@ -16,7 +16,7 @@ feature 'Create a preorder for a project' do
     end
 
     scenario 'User submits a duplicate email for the same project' do
-      FactoryGirl.create(:populated_preorder, :project => project, :email => 'dupe@glitchwrks.com')
+      FactoryBot.create(:populated_preorder, :project => project, :email => 'dupe@glitchwrks.com')
 
       fill_in :email, :with => 'dupe@glitchwrks.com'
       click_button 'Create Preorder'
@@ -52,7 +52,7 @@ feature 'Create a preorder for a project' do
   end
 
   context 'with a disabled project' do
-    let!(:disabled_project) { FactoryGirl.create(:disabled_project) }
+    let!(:disabled_project) { FactoryBot.create(:disabled_project) }
 
     scenario 'User tries to preorder a disabled project' do
       visit new_preorder_path(:project => disabled_project.name)

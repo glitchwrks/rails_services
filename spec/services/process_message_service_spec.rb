@@ -11,7 +11,7 @@ RSpec.describe ProcessMessageService do
   end
 
   describe 'with a valid message' do
-    let!(:message) { FactoryGirl.build(:valid_message) }
+    let!(:message) { FactoryBot.build(:valid_message) }
 
     it { expect(processed_message).not_to be_suspicious }
     it { expect(processed_message).not_to be_failed }
@@ -24,7 +24,7 @@ RSpec.describe ProcessMessageService do
   end
 
   describe 'with a suspicious message' do
-    let!(:message) { FactoryGirl.build(:suspicious_message) }
+    let!(:message) { FactoryBot.build(:suspicious_message) }
 
     it { expect(processed_message).to be_suspicious }
     it { expect(processed_message).not_to be_failed }
@@ -42,7 +42,7 @@ RSpec.describe ProcessMessageService do
   end
 
   describe 'with a spammy message' do
-    let!(:message) { FactoryGirl.build(:spammy_message) }
+    let!(:message) { FactoryBot.build(:spammy_message) }
 
     it { expect(processed_message).not_to be_suspicious }
     it { expect(processed_message).to be_failed }

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Confirm a preorder' do
-  let!(:preorder) { FactoryGirl.create(:confirmable_preorder) }
+  let!(:preorder) { FactoryBot.create(:confirmable_preorder) }
   let(:project) { preorder.project }
 
   scenario 'User confirms a valid preorder' do

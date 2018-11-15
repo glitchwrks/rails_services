@@ -11,7 +11,7 @@ RSpec.describe MessageMailer do
     let(:email) { MessageMailer.contact(message).deliver_now }
 
     describe 'with a valid message' do
-      let!(:message) { FactoryGirl.build(:valid_message) }
+      let!(:message) { FactoryBot.build(:valid_message) }
 
       it { expect(email.subject).to eq "#{message.subject} (from contact form)" }
       it {expect(email.to).to include(ApplicationSetting.find_by_name('contact_email')) }
@@ -22,7 +22,7 @@ RSpec.describe MessageMailer do
     end
 
     describe 'with a message containing HTML' do
-      let!(:message) { FactoryGirl.build(:suspicious_message) }
+      let!(:message) { FactoryBot.build(:suspicious_message) }
 
       it {expect(email.body).to include('*** WARNING: Original subject contained HTML, which was stripped! ***') }
       it {expect(email.body).to include('*** WARNING: Original message contained HTML, which was stripped! ***') }

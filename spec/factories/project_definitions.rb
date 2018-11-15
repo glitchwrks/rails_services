@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :project do
     sequence(:name) { |n| "project#{n}"} 
@@ -6,10 +6,10 @@ FactoryGirl.define do
   end
 
   factory :enabled_project, :parent => :project do
-    enabled true
+    enabled { true }
   end
 
   factory :disabled_project, :parent => :project do
-    enabled false
+    enabled { false }
   end
 end

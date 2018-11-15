@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PreorderMailer do
   describe '#confirmation' do
-    let!(:preorder) { FactoryGirl.build(:confirmable_preorder) }
+    let!(:preorder) { FactoryBot.build(:confirmable_preorder) }
     let(:project) { preorder.project }
     let(:email) { PreorderMailer.confirmation(preorder).deliver_now }
 

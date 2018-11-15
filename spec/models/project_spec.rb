@@ -7,9 +7,9 @@ RSpec.describe Project do
   it { is_expected.to validate_presence_of :printable_name }
 
   describe '#confirmed_preorders' do
-  	let!(:project) { FactoryGirl.create(:enabled_project) }
-  	let!(:confirmed_preorder) { FactoryGirl.create(:confirmable_preorder, :project => project, :confirmed => true) }
-  	let!(:unconfirmed_preorder) { FactoryGirl.create(:confirmable_preorder, :project => project) }
+  	let!(:project) { FactoryBot.create(:enabled_project) }
+  	let!(:confirmed_preorder) { FactoryBot.create(:confirmable_preorder, :project => project, :confirmed => true) }
+  	let!(:unconfirmed_preorder) { FactoryBot.create(:confirmable_preorder, :project => project) }
 
   	it { expect(project.confirmed_preorders).to be_present }
   	it { expect(project.confirmed_preorders).to include(confirmed_preorder) }
