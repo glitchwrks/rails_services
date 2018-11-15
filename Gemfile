@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.1'
+gem 'rails', '5.2.1'
 gem 'mysql2'
 gem 'unicorn'
 
@@ -19,7 +19,7 @@ gem 'bcrypt', '~> 3.1.7'
  
 group :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_bot_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara-webkit'
 end
@@ -31,6 +31,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rvm'
-  gem 'rbnacl-libsodium'
+  gem 'ed25519'
+  gem 'rubocop-rspec'
 end
 
