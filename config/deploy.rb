@@ -16,7 +16,7 @@ set :assets_roles, [:web, :app]
 set :rails_assets_groups, :assets
 
 # We're storing in a subdir currently
-set :assets_prefix, 'public/ng/assets'
+set :assets_prefix, 'ng/assets'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
