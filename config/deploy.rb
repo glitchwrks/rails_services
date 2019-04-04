@@ -15,6 +15,9 @@ set :assets_roles, [:web, :app]
 # RAILS_GROUPS env value for the assets:precompile task. Default to nil.
 set :rails_assets_groups, :assets
 
+# We're storing in a subdir currently
+set :assets_prefix, '/ng/assets'
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

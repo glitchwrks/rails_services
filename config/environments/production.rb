@@ -95,5 +95,5 @@ Rails.application.configure do
   # Currently living at /ng on the server
   config.relative_url_root = '/ng'
   config.root_directory = '/ng'
-  config.assets.prefix = '/ng'
+  config.assets.prefix = '/ng/assets'
 end
