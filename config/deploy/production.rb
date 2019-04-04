@@ -4,7 +4,7 @@ set :conditionally_migrate, true
 
 set :default_env, { :path => "$HOME/.gem/ruby/2.2/bin:$PATH" }
 
-server 'services.theglitchworks.net', user: 'services', roles: %w{app db web}, :my_property => :my_value
+server 'services.glitchworks.net', user: 'services', roles: %w{app db web}, :my_property => :my_value
 set :unicorn_config_path, "#{current_path}/config/unicorn.rb"
 set :unicorn_pid, "/var/run/unicorn/rails_services.pid"
 set :linked_files, %w{config/database.yml config/secrets.yml}
