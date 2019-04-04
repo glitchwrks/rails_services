@@ -9,6 +9,9 @@ set :keep_releases, 2
 set :rvm_type, :user
 set :rvm_ruby_version, '2.6.2@rails_services'
 
+# Defaults to web only
+set :assets_roles, [:web, :app]
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
