@@ -16,7 +16,9 @@ gem 'simple_form'
 gem 'sanitize', '~> 4.6.3'
 gem 'uuidtools'
 gem 'bcrypt', '~> 3.1.7'
- 
+
+gem 'nokogiri', git: 'https://github.com/chapmajs/nokogiri.git', branch: 'test1'
+
 group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_bot_rails', '~> 4.0'

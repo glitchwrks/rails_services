@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/chapmajs/nokogiri.git
+  revision: 29a8b3500888dbdf447d7ad5affe7876202d2ee7
+  branch: test1
+  specs:
+    nokogiri (1.10.2.20190404154312)
+      mini_portile2 (~> 2.4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -108,8 +116,6 @@ GEM
       net-ssh (>= 2.6.5, < 6.0.0)
     net-ssh (5.2.0)
     nio4r (2.3.1)
-    nokogiri (1.10.2)
-      mini_portile2 (~> 2.4.0)
     nokogumbo (1.5.0)
       nokogiri
     parallel (1.17.0)
@@ -227,6 +233,7 @@ DEPENDENCIES
   ed25519
   factory_bot_rails (~> 4.0)
   mysql2
+  nokogiri!
   pkg-config
   rails (~> 5.2.2.1)
   rspec-rails (~> 3.0)
