@@ -35,4 +35,3 @@ Shoulda::Matchers.configure do |config|
 end
 
 Capybara.default_driver = :rack_test
-Capybara.javascript_driver = :webkit
