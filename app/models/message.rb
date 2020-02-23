@@ -6,14 +6,7 @@ class Message < ApplicationRecord
   validates :subject, :presence => true
   validates :content, :presence => true
 
-  CHECK_OPTIONS = ['robot', 'human', 'script']
-  BOT_CHECK = 'robot'
-
   attr_writer :sanitizer
-
-  def spammy?
-    check != 'human'
-  end
 
   def content_contains_html?
     sanitized_content != content.gsub(/\r/,'')

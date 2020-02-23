@@ -7,11 +7,6 @@ RSpec.describe Message do
   it { is_expected.to validate_presence_of :subject }
   it { is_expected.to validate_presence_of :content }
 
-  describe '#spammy?' do
-    it { expect(Message.new(:check => 'human')).not_to be_spammy }
-    it { expect(Message.new(:check => 'not_human')).to be_spammy } 
-  end
-
   describe 'content sanitization' do
     let!(:message_with_html) { Message.new(:content => 'Test <b>Content</b>', :subject => 'Test <i>Subject</i>') }
     let!(:message_without_html) { Message.new(:content => 'Plain Content', :subject => 'Plain Subject') }

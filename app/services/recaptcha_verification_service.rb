@@ -20,7 +20,7 @@ class RecaptchaVerificationService
 
   def build_query
     @query = {
-      :secret => Rails.application.secrets[:recaptcha][:preorder][:secret_key],
+      :secret => Rails.application.secrets[:recaptcha][@action.to_sym][:secret_key],
       :response => @response,
       :remoteip => @address
     }
@@ -34,6 +34,7 @@ class RecaptchaVerificationService
 
   def persist_failure
     RecaptchaFailure.create!(
+      :action => @action.to_s,
       :challenge_timestamp => @results['challenge_ts'],
       :hostname => @results['hostname'],
       :address => @address,

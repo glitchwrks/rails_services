@@ -1,4 +1,7 @@
 <% @page_title = 'Contact Us' %>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+<%= base_error_explanation @message %>
 
 <p>Please fill out our contact form. All fields are required. If you wish to encrypt your message, please use my <a href='https://keybase.io/glitch'>keybase.io key</a>.</p>
 
@@ -8,9 +11,7 @@
   <%= f.input :subject, :label => 'Subject' %><br />
   <%= f.input :content, :label => 'Your message -- all HTML will be stripped. Limit 64KiB.', :input_html => { :class => 'full-width', :rows => 20 } %><br />
   
-  <div>I am a: 
-    <%= f.input_field :check, :label => false, :as => :radio_buttons, :collection => Message::CHECK_OPTIONS, :checked => Message::BOT_CHECK %>
-  </div>
+  <div class='g-recaptcha' data-sitekey='<%= Rails.application.secrets[:recaptcha][:mailer][:site_key] %>' data-theme='dark'></div>
   <br />
 
   <%= f.button :submit, 'Send Message' %>

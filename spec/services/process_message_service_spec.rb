@@ -14,7 +14,6 @@ RSpec.describe ProcessMessageService do
     let!(:message) { FactoryBot.build(:valid_message) }
 
     it { expect(processed_message).not_to be_suspicious }
-    it { expect(processed_message).not_to be_failed }
     it { expect(processed_message).not_to be_persisted }
 
     it 'should send the message' do
@@ -27,7 +26,6 @@ RSpec.describe ProcessMessageService do
     let!(:message) { FactoryBot.build(:suspicious_message) }
 
     it { expect(processed_message).to be_suspicious }
-    it { expect(processed_message).not_to be_failed }
     it { expect(processed_message).to be_persisted }
 
     it 'should still send the message' do
@@ -37,24 +35,6 @@ RSpec.describe ProcessMessageService do
 
     it 'should not persist the message if configured not to save_suspicious_messages' do
       BooleanSetting.find_by(:name => 'save_suspicious_messages').update_attributes(:value => 'false')
-      expect(processed_message).not_to be_persisted
-    end
-  end
-
-  describe 'with a spammy message' do
-    let!(:message) { FactoryBot.build(:spammy_message) }
-
-    it { expect(processed_message).not_to be_suspicious }
-    it { expect(processed_message).to be_failed }
-    it { expect(processed_message).to be_persisted }
-
-    it 'should not send the message' do
-      expect_any_instance_of(MessageMailer).not_to receive(:contact)
-      service.execute
-    end
-
-    it 'should not persist the message if configured not to save_failed_messages' do
-      BooleanSetting.find_by(:name => 'save_failed_messages').update_attributes(:value => 'false')
       expect(processed_message).not_to be_persisted
     end
   end

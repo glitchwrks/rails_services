@@ -17,6 +17,7 @@ RSpec.describe RecaptchaVerificationService do
     it { expect(RecaptchaFailure.first.hostname).to eq 'host.test.com' }
     it { expect(RecaptchaFailure.first.address).to eq '127.0.0.1' }
     it { expect(RecaptchaFailure.first.error_codes).to eq 'some codes' }
+    it { expect(RecaptchaFailure.first.action).to eq 'preorder' }
   end
 
   describe 'when the HTTP response returns a status of true' do

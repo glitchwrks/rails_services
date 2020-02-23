@@ -4,24 +4,13 @@ class ProcessMessageService
   end
 
   def execute
-    if @message.spammy?
-      save_failed_message
-    else
-      check_for_html
-      send_email
-    end
+    check_for_html
+    send_email
 
     @message
   end
 
   private
-
-  def save_failed_message
-    if ApplicationSetting.find_by_name('save_failed_messages')
-      @message.failed = true
-      @message.save!
-    end
-  end
 
   def check_for_html
     if @message.contains_html? && ApplicationSetting.find_by_name('save_suspicious_messages')
