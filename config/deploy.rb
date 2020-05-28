@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.12.0"
+lock "3.14.0"
 
 set :application, 'rails_services'
 set :repo_url, 'git@github.com:glitchwrks/rails_services.git'
