@@ -7,7 +7,7 @@ class TestfdcResult < ApplicationRecord
   NOT_TESTED = ''
 
   def approve!
-    self.update_attributes!(:approved => true)
+    self.update!(:approved => true)
   end
 
   def result_string=(results)

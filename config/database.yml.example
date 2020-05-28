@@ -1,6 +1,7 @@
 development:
   adapter: mysql2
   database: db_name
+  encoding: utf8mb4
   username: db_user
   password: s3cr37
   host: localhost
@@ -8,6 +9,7 @@ development:
 test:
   adapter: mysql2
   database: db_name_test
+  encoding: utf8mb4
   username: db_user
   password: s3cr37
   host: localhost
@@ -15,6 +17,7 @@ test:
 production:
   adapter: mysql2
   database: production_db_name
+  encoding: utf8mb4
   username: production_db_user
   password: 5up3rs3cre7
   host: localhost

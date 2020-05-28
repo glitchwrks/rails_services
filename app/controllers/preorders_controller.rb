@@ -23,7 +23,7 @@ class PreordersController < ApplicationController
     @preorder = Preorder.find_by(:confirmation_token => params[:token])
     
     if @preorder.present?
-      @preorder.update_attributes(:confirmed => true)
+      @preorder.update(:confirmed => true)
     else
       render :invalid_token
     end

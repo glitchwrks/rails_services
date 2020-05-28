@@ -1,7 +1,7 @@
 class ApplicationSetting < ApplicationRecord
   self.inheritance_column = :sti_type
 
-  validates :name, :presence => true, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => { :case_sensitive => true }
   validates :description, :presence => true
   validates :value, :presence => true
   validates :sti_type, :presence => { :message => 'ApplicationSetting is an abstract parent class and cannot be persisted.' }

@@ -5,9 +5,9 @@ RSpec.describe ProcessMessageService do
   let(:processed_message) { service.execute }
 
   before(:each) do
-    BooleanSetting.find_or_create_by(:name => 'save_failed_messages').update_attributes(:value => 'true', :description => 'Save failed messages')
-    BooleanSetting.find_or_create_by(:name => 'save_suspicious_messages').update_attributes(:value => 'true', :description => 'Save suspicious messages')
-    StringSetting.find_or_create_by(:name => 'contact_email').update_attributes(:value => 'test@test.com', :description => 'Email to send contact messages to')
+    BooleanSetting.find_or_create_by(:name => 'save_failed_messages').update(:value => 'true', :description => 'Save failed messages')
+    BooleanSetting.find_or_create_by(:name => 'save_suspicious_messages').update(:value => 'true', :description => 'Save suspicious messages')
+    StringSetting.find_or_create_by(:name => 'contact_email').update(:value => 'test@test.com', :description => 'Email to send contact messages to')
   end
 
   describe 'with a valid message' do
@@ -34,7 +34,7 @@ RSpec.describe ProcessMessageService do
     end
 
     it 'should not persist the message if configured not to save_suspicious_messages' do
-      BooleanSetting.find_by(:name => 'save_suspicious_messages').update_attributes(:value => 'false')
+      BooleanSetting.find_by(:name => 'save_suspicious_messages').update(:value => 'false')
       expect(processed_message).not_to be_persisted
     end
   end

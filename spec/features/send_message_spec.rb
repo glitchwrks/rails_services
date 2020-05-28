@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Send a message' do
   before(:each) do
-    BooleanSetting.find_or_create_by(:name => 'save_suspicious_messages').update_attributes(:value => 'true', :description => 'Save suspicious messages')
-    StringSetting.find_or_create_by(:name => 'contact_email').update_attributes(:value => 'test@test.com', :description => 'Email to send contact messages to')
+    BooleanSetting.find_or_create_by(:name => 'save_suspicious_messages').update(:value => 'true', :description => 'Save suspicious messages')
+    StringSetting.find_or_create_by(:name => 'contact_email').update(:value => 'test@test.com', :description => 'Email to send contact messages to')
     visit new_message_path
   end
 
