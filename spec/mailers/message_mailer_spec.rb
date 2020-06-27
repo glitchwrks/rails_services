@@ -15,7 +15,7 @@ RSpec.describe MessageMailer do
 
       it { expect(email.subject).to eq "#{message.subject} (from contact form)" }
       it {expect(email.to).to include(ApplicationSetting.find_by_name('contact_email')) }
-      it {expect(email.from).to include(message.email) }
+      it {expect(email.from).to include('noreply@glitchwrks.com') }
       it {expect(email.reply_to).to include(message.email) }
 
       it {expect(email.body).to include(message.content) }
