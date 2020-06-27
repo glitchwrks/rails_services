@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :pastes, :only => [:show]
+
     resources :projects, :only => [:index] do
       member do
         get :disabled
@@ -37,12 +39,16 @@ Rails.application.routes.draw do
     end
 
     namespace :api do
+      resources :pastes, :only => [:create]
+
       resources :testfdc_notes, :only => [:index, :create]
+
       resources :testfdc_results, :only => [:index] do
         member do
           get :approve
         end
       end
+
     end
   end
 end
