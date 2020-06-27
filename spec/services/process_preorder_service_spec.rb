@@ -23,8 +23,8 @@ RSpec.describe ProcessPreorderService do
 
   it 'should strip all preorder fields' do
     preorder.name = '<b>The Name</b>'
-    preorder.email = '<script>email@you.com</script>'
-    preorder.boards = '<a href="http://www.bogus.com/">Totally Legit</a>'
+    preorder.email = '<i>email@you.com</i>'
+    preorder.boards = '<a href="http://www.bogus.com/">Totally Legit</a><script>Should go away</script>'
 
     service.execute
 
