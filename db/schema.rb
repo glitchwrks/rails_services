@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_181337) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pastes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "pastes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", limit: 8, null: false
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -73,14 +73,14 @@ ActiveRecord::Schema.define(version: 2020_06_27_181337) do
     t.string "action"
   end
 
-  create_table "testfdc_notes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "testfdc_notes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "testfdc_results", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "testfdc_results", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "manufacturer"
     t.string "model"
     t.string "fdc_chip"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_181337) do
     t.index ["note_id"], name: "index_testfdc_results_on_note_id"
   end
 
-  create_table "users", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "login"
     t.string "password_digest"
     t.datetime "created_at", null: false

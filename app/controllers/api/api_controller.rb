@@ -3,6 +3,7 @@ class Api::ApiController < ApplicationController
   layout false
 
   before_action :authenticate
+  before_action :only_respond_to_json
 
   private
 
@@ -12,5 +13,9 @@ class Api::ApiController < ApplicationController
     else
       request_http_basic_authentication
     end
+  end
+
+  def only_respond_to_json
+    head :not_acceptable unless request.format == :json
   end
 end
