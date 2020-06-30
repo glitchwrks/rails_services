@@ -4,9 +4,13 @@ class Api::TestfdcResultsController < Api::ApiController
     render :json => TestfdcResult.order(:manufacturer).to_a
   end
 
+  def unapproved
+    render :json => TestfdcResult.where(:approved => false).to_a
+  end
+
   def approve
     TestfdcResult.find(params[:id]).approve!
-    head 200
+    head 204
   end
 
   def create
@@ -18,6 +22,11 @@ class Api::TestfdcResultsController < Api::ApiController
     else
       render :json => result.errors, :status => 422
     end
+  end
+
+  def destroy
+    TestfdcResult.find(params[:id]).destroy!
+    head 204
   end
 
   private
