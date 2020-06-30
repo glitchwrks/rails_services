@@ -27,15 +27,19 @@ RSpec.describe Api::TestsController, :type => :controller do
   end
 
   describe 'with valid credentials' do
-    let!(:user) { FactoryBot.create(:api_user) }
+    let(:api_user) { FactoryBot.create(:api_user) }
+    let(:non_api_user) { FactoryBot.create(:user) }
 
-    before(:each) do
-      http_basic_auth(user.login, 'testing')
-    end
-
-    it 'should be successful' do
+    it 'should be successful if user has API access' do
+      http_basic_auth(api_user.login, 'testing')
       get :index, :format => :json
       expect(response).to have_http_status(:no_content)
+    end
+
+    it 'should fail if user does not have API access' do
+      http_basic_auth(non_api_user.login, 'testing')
+      get :index, :format => :json
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 end
