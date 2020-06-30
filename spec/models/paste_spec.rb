@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Paste do
 
-
   describe 'validations' do
     subject { FactoryBot.create(:valid_paste) }
 
