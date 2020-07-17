@@ -5,7 +5,7 @@ class Api::TestfdcResultsController < Api::ApiController
   end
 
   def unapproved
-    render :json => TestfdcResult.where(:approved => false).to_a
+    render :json => TestfdcResult.where(:approved => nil).to_a
   end
 
   def approve

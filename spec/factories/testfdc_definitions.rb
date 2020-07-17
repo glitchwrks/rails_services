@@ -8,7 +8,7 @@ FactoryBot.define do
     sequence(:model) { |n| "GW-FDC-#{n}"} 
     fdc_chip { 'Foochip 6000' }
     hardware_class { 'ISA' }
-    approved { false }
+    approved { nil }
   end
  
   factory :approved_testfdc_result, :parent => :testfdc_result do
