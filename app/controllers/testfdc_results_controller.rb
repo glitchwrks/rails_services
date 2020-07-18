@@ -3,7 +3,7 @@ class TestfdcResultsController < ApplicationController
   def index
     @testfdc_results = TestfdcResult.where(:approved => true).order(:manufacturer).to_a
     @notes = TestfdcNote.order(:number).to_a
-    @latest_entry = TestfdcResult.where(:approved => true).order(:updated_at).first.updated_at if @testfdc_results.any?
+    @latest_entry = TestfdcResult.where(:approved => true).order(:updated_at => :desc).first.updated_at if @testfdc_results.any?
   end
 
   def new
