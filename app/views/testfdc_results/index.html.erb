@@ -1,5 +1,7 @@
 <% @page_title = "TestFDC Results Registry" %>
 
+<p>This page is also available in <%= link_to 'plaintex format', testfdc_results_path(:format => 'text') %></p>
+
 <p>Updated <%= @latest_entry %></p>
 
 <p>This page contains a listing of motherboards and/or floppy controllers that have been tested with Dave Dunfield's <%= link_to 'TESTFDC program', 'http://www.classiccmp.org/dunfield/img54306/pcfdc.txt' %> His registry seems to be in an unmaintaned state, so we've put this one together to try and keep the registry updated. As with Dave's original registry, there is no guarantee that this information is correct.</p>

@@ -1,0 +1,57 @@
+Updated <%= @latest_entry %>
+
+This document contains a listing of mainboards and floppy controllers that
+have been tested with Dave Dunfield's TESTFDC program. His registry seems to 
+be in an unmaintaned state, so we've put this one together to try and keep the
+registry updated. As with Dave's original registry, there is no guarantee that
+this information is correct.
+
+You may submit your results using the TestFDC results submission form:
+
+<%= url_for new_testfdc_result_url %> 
+
+You may also submit results using our general-purpose contact form:
+
+<%= url_for new_message_url %>
+
+----------------------------- Useful  Information ----------------------------
+
+All mainboards should pass the 'D' tests - these are required for standard PC
+formats.
+
+A mainboard that fails all 'S' tests will not be able to read or recreate
+single-density disks, which account for a significant portion of older non-
+PC formats.
+
+A mainboard that passes the 250 and 500kpbs 'S' tests, but fails the 300kbps
+'S' test will not be able to handle single-density with a 1.2M 5.25" HD drive
+(the most common 5.25" drive types in AT and later machines), however it will
+be able to do it if you install a DD drive. (Use of a DD drive is recommended
+for SD/DD formats anyway, even if the HD setup supports it).
+
+The 'X' test (Double-Density with 128 bytes sectors) checks a capability that
+is used by very few disk formats, and for most people, not having it will not
+be a significant drawback. (Which is good, because the original NEC-765 PC
+controller, and most later chips based on this design don't support it).
+
+---------------------- Mainboard / Controller  Listings ----------------------
+
+S = Single Density                              P = Passed
+D = Double Density                              F = Failed
+X = Double Density / 128 byte sectors           N = Not tested
+
+Entries with no model were provided for the FDC chip only.
+
+                                                                 Data rate
+                                                                250 300 500
+Manufacturer    Model                   FDC chip        Class   SDX SDX SDX
+------------------------------------------------------------------------------
+<% @testfdc_results.each do |testfdc_result| %>
+<%= testfdc_result.to_report_s %>
+<% end %>
+
+
+Notes:
+<% @notes.each do |note| %>
+<%= note.to_report_s %>
+<% end %>
