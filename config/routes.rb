@@ -49,7 +49,7 @@ Rails.application.routes.draw do
         end
 
         member do
-          put :approve
+          patch :approve
         end
       end
 
