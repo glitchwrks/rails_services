@@ -1,6 +1,5 @@
 module ApplicationHelper
   def test_result(input)
-    return 'N' if input.nil?
-    input ? 'P' : 'F'
+    TestfdcResult.test_result(input)
   end
 end
