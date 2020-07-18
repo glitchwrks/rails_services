@@ -53,7 +53,7 @@ class TestfdcResult < ApplicationRecord
   end
 
   def fixed_length(input, length)
-    (input || '').slice(0..length).ljust(length)
+    (input || '').slice(0...length).ljust(length)
   end
 
   def note_number_or_blank
