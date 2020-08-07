@@ -1,16 +1,13 @@
 class Api::TestfdcResultsController < Api::ApiController
 
+  before_action :load_testfdc_result, :only => [:show, :update, :destroy, :approve]
+
   def index
     render :json => TestfdcResult.order(:manufacturer).to_a
   end
 
-  def unapproved
-    render :json => TestfdcResult.where(:approved => nil).to_a
-  end
-
-  def approve
-    TestfdcResult.find(params[:id]).approve!
-    head 204
+  def show
+    render :json => @testfdc_result
   end
 
   def create
@@ -24,12 +21,36 @@ class Api::TestfdcResultsController < Api::ApiController
     end
   end
 
+  def update
+    @testfdc_result.update(testfdc_result_parameters)
+
+    if @testfdc_result.valid?
+      @testfdc_result.save!
+      head 201
+    else
+      render :json => @testfdc_result.errors, :status => 422
+    end
+  end
+
   def destroy
-    TestfdcResult.find(params[:id]).destroy!
+    @testfdc_result.destroy!
+    head 204
+  end
+
+  def unapproved
+    render :json => TestfdcResult.where(:approved => nil).to_a
+  end
+
+  def approve
+    @testfdc_result.approve!
     head 204
   end
 
   private
+
+  def load_testfdc_result
+    @testfdc_result = TestfdcResult.find(params[:id])
+  end
 
   def testfdc_result_parameters
     params.require(:testfdc_result).permit(

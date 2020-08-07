@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
       resources :testfdc_notes, :only => [:index, :create]
 
-      resources :testfdc_results, :only => [:index, :destroy, :create] do
+      resources :testfdc_results, :only => [:index, :destroy, :create, :show, :update] do
         collection do
           get :unapproved
         end
