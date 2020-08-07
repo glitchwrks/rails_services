@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     namespace :api, :constraints => { :format => 'json' } do
       resources :pastes, :only => [:create]
 
-      resources :testfdc_notes, :only => [:index, :create]
+      resources :testfdc_notes, :only => [:index, :show, :create]
 
       resources :testfdc_results, :only => [:index, :destroy, :create, :show, :update] do
         collection do

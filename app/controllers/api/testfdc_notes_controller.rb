@@ -4,6 +4,10 @@ class Api::TestfdcNotesController < Api::ApiController
     render :json => TestfdcNote.order(:number).to_a
   end
 
+  def show
+    render :json => TestfdcNote.find(params[:id])
+  end
+
   def create
     note = TestfdcNote.new(testfdc_note_parameters)
 
