@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 6.0.5'
+gem 'rails', '~> 7.0.4'
+gem 'propshaft'
 gem 'mysql2'
 gem 'unicorn'
 
@@ -13,14 +14,14 @@ gem 'pkg-config'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'simple_form'
-gem 'sanitize', '~> 5.2.1'
+gem 'sanitize', '~> 6.0'
 gem 'uuidtools'
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1'
  
 group :test do
-  gem 'rspec-rails', '~> 3.0'
-  gem 'factory_bot_rails', '~> 4.0'
-  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rspec-rails', '~> 6.0'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'shoulda-matchers', '~> 5.2'
   gem 'capybara'
 end
 
@@ -33,5 +34,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'ed25519'
   gem 'rubocop-rspec'
+  gem 'webrick'
 end
 

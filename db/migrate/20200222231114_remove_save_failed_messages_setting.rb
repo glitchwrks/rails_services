@@ -1,6 +1,7 @@
 class RemoveSaveFailedMessagesSetting < ActiveRecord::Migration[5.2]
   def up
-    ApplicationSetting.find_by(:name => 'save_failed_messages').delete
+    setting = ApplicationSetting.find_by(:name => 'save_failed_messages')
+    setting.delete if setting.present?
   end
 
   def down

@@ -1,4 +1,4 @@
-class CreateRecaptchaFailures < ActiveRecord::Migration
+class CreateRecaptchaFailures < ActiveRecord::Migration[5.0]
   def change
     create_table :recaptcha_failures, :id => false do |t|
       t.string :id, :limit => 36, :primary_key => true, :null => false

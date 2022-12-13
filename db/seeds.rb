@@ -1,7 +1,7 @@
 # Minimal data needed to develop with.
 
 # Project related seeds
-Project.new(:name => 'test_project', :enabled => true)
+Project.create!(:name => 'test_project', :printable_name => 'Test Project', :enabled => true)
 
 # Contact Us related seeds
 BooleanSetting.create(:name => 'save_failed_messages', :description => 'Save messages that fail spam check', :value => 'true')

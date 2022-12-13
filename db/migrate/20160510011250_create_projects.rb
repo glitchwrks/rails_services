@@ -1,4 +1,4 @@
-class CreateProjects < ActiveRecord::Migration
+class CreateProjects < ActiveRecord::Migration[5.0]
   def change
     create_table :projects, :id => false do |t|
       t.string :id, :limit => 36, :primary_key => true, :null => false
