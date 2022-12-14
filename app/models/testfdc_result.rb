@@ -49,7 +49,9 @@ class TestfdcResult < ApplicationRecord
   private
 
   def at_least_one_field_populated
-    errors[:base] << 'You submitted a blank report; you must fill in something!' unless manufacturer.present? || model.present? || fdc_chip.present?
+    unless manufacturer.present? || model.present? || fdc_chip.present?
+      errors.add :base, 'You submitted a blank report; you must fill in something!'
+    end
   end
 
   def fixed_length(input, length)

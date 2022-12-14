@@ -14,10 +14,14 @@ class Preorder < ApplicationRecord
   private
 
   def at_least_one_quantity
-    errors[:base] << 'You must specify at least one quantity' unless boards.present? || kits.present? || assembled.present?
+    unless boards.present? || kits.present? || assembled.present?
+      errors.add :base, 'You must specify at least one quantity'
+    end
   end
 
   def email_not_registered_for_project
-    errors[:email] << 'already registered for this project' if Preorder.find_by(:email => self.email, :project => self.project)
+    if Preorder.find_by(:email => self.email, :project => self.project)
+      errors.add :email, 'already registered for this project' 
+    end
   end
 end

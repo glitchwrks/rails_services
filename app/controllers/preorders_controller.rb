@@ -43,7 +43,7 @@ class PreordersController < ApplicationController
   def verify_recaptcha
     return true if RecaptchaVerificationService.new('preorder', params['g-recaptcha-response'], request.remote_ip).execute
     
-    @preorder.errors[:base] << 'CAPTCHA failed, please try again'
+    @preorder.errors.add :base, 'CAPTCHA failed, please try again'
     false
   end
 end

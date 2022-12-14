@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
   def verify_recaptcha
     return true if RecaptchaVerificationService.new(:mailer, params['g-recaptcha-response'], request.remote_ip).execute
     
-    @message.errors[:base] << 'CAPTCHA failed, please try again'
+    @message.errors.add :base, 'CAPTCHA failed, please try again'
     false
   end
 end
