@@ -1,5 +1,5 @@
 module Helpers
-  module Authentication
+  module BasicAuth
     def http_basic_auth(login, password)
       request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(login, password)
     end  

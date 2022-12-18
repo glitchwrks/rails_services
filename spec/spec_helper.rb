@@ -96,5 +96,5 @@ RSpec.configure do |config|
 =end
   
   # Include our HTTP Basic Auth helper
-  config.include Helpers::Authentication, :type => :controller
+  config.include Helpers::BasicAuth, :type => :controller
 end
