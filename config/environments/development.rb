@@ -45,8 +45,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :user_name            => Rails.application.secrets[:email][:username],
     :password             => Rails.application.secrets[:email][:password],
-    :address              => 'mailtrap.io',
-    :domain               => 'mailtrap.io',
+    :address              => 'smtp.mailtrap.io',
+    :domain               => 'smtp.mailtrap.io',
     :port                 => Rails.application.secrets[:email][:port],
     :authentication       => :cram_md5,
     :enable_starttls_auto => true
