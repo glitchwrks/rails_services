@@ -20,5 +20,10 @@ FactoryBot.define do
       approved { true }
     end
   end
+
+  factory :testfdc_note do
+    sequence(:number) { |n| n }
+    description { 'TestFDC Note Description for testing' }
+  end
   
 end
