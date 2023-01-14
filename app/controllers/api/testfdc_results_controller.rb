@@ -26,7 +26,7 @@ class Api::TestfdcResultsController < Api::ApiController
 
     if @testfdc_result.valid?
       @testfdc_result.save!
-      head 201
+      head 204
     else
       render :json => @testfdc_result.errors, :status => 422
     end
