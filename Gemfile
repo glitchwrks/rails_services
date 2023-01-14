@@ -18,6 +18,7 @@ group :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'shoulda-matchers', '~> 5.2'
   gem 'capybara'
+  gem 'simplecov'
 end
 
 group :development do

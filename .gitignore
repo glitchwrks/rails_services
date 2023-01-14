@@ -28,3 +28,6 @@
 
 # Ignore editor tempfiles
 *~
+
+# Ignore SimpleCov coverage reporting
+/coverage/
