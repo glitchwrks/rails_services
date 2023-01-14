@@ -20,8 +20,5 @@ FactoryBot.define do
       approved { true }
     end
   end
- 
-  factory :approved_testfdc_result, :parent => :testfdc_result do
-    approved { true }
-  end
+  
 end

@@ -36,7 +36,7 @@ RSpec.describe Api::TestfdcResultsController, :type => :controller do
   end
 
   describe '#unapproved' do
-    let!(:approved_testfdc_result) { FactoryBot.create(:approved_testfdc_result) }
+    let!(:approved_testfdc_result) { FactoryBot.create(:testfdc_result, :approved) }
 
     before(:each) do
       get :unapproved, :format => :json
@@ -60,7 +60,7 @@ RSpec.describe Api::TestfdcResultsController, :type => :controller do
     end
 
     describe 'with valid parameters' do
-      let!(:new_testfdc_result) { FactoryBot.build(:approved_testfdc_result) }
+      let!(:new_testfdc_result) { FactoryBot.build(:testfdc_result, :approved) }
       let(:result) { TestfdcResult.find_by(:model => new_testfdc_result.model) }
 
       before(:each) do
