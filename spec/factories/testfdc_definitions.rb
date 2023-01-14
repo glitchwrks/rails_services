@@ -15,6 +15,10 @@ FactoryBot.define do
     mfm_250 { false }
     mfm_300 { false }
     mfm_500 { false }
+
+    trait :approved do
+      approved { true }
+    end
   end
  
   factory :approved_testfdc_result, :parent => :testfdc_result do
