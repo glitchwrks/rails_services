@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Create a preorder for a project' do
   
   context 'with an enabled project' do
-    let!(:project) { FactoryBot.create(:enabled_project) }
+    let!(:project) { FactoryBot.create(:project, :enabled) }
 
     scenario 'User goes to project page to find a preorderable project' do
       visit projects_path
@@ -63,7 +63,7 @@ feature 'Create a preorder for a project' do
   end
 
   context 'with a disabled project' do
-    let!(:disabled_project) { FactoryBot.create(:disabled_project) }
+    let!(:disabled_project) { FactoryBot.create(:project, :disabled) }
 
     scenario 'User tries to preorder a disabled project' do
       visit new_preorder_path(:project => disabled_project.name)
