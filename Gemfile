@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 6.0.4'
+gem 'rails', '~> 6.0.5'
 gem 'mysql2'
 gem 'unicorn'
 
