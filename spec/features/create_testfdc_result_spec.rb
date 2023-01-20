@@ -17,6 +17,7 @@ feature 'Submit a TestFDC result report' do
       click_button 'Submit Your TestFDC Results'
     end
 
+    it { expect(page).to have_text 'TestFDC Result Submitted' }
     it { expect(page).to have_text 'Thanks for your TestFDC results submission! It will be reviewed shortly.' }
 
     it 'should not display the unapproved result in the main registry page' do
