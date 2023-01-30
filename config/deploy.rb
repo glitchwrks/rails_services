@@ -7,7 +7,7 @@ set :deploy_to, '/home/services/rails_services'
 set :keep_releases, 2
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.6.2@rails_services'
+set :rvm_ruby_version, '3.1.3@rails_services'
 
 # Defaults to web only
 set :assets_roles, [:web, :app]
