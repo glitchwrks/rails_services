@@ -129,6 +129,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.1)
     minitest (5.17.0)
     mysql2 (0.5.4)
     net-imap (0.3.4)
@@ -144,6 +145,9 @@ GEM
       net-protocol
     net-ssh (7.0.1)
     nio4r (2.5.8)
+    nokogiri (1.14.0)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.14.0-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.0-x86_64-linux)
@@ -266,6 +270,7 @@ GEM
 PLATFORMS
   x86_64-darwin-20
   x86_64-linux
+  x86_64-openbsd-6.9
 
 DEPENDENCIES
   awesome_print
