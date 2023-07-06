@@ -9,7 +9,7 @@ gem 'unicorn'
 gem 'pkg-config'
 
 gem 'simple_form'
-gem 'sanitize', '~> 6.0'
+gem 'sanitize', '~> 6.0.2'
 gem 'uuidtools'
 gem 'bcrypt', '~> 3.1'
  
