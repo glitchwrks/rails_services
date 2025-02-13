@@ -2,7 +2,7 @@ set :stage, :production
 set :rails_env, :production
 set :conditionally_migrate, true  
 
-set :branch, :puma_upgrade
+set :branch, :staging
 
 set :default_env, { :path => "$HOME/.gem/ruby/3.3/bin:$PATH" }
 
