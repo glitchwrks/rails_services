@@ -43,11 +43,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    :user_name            => Rails.application.secrets[:email][:username],
-    :password             => Rails.application.secrets[:email][:password],
+    :user_name            => Rails.application.credentials[:email][:username],
+    :password             => Rails.application.credentials[:email][:password],
     :address              => 'smtp.mailtrap.io',
     :domain               => 'smtp.mailtrap.io',
-    :port                 => Rails.application.secrets[:email][:port],
+    :port                 => Rails.application.credentials[:email][:port],
     :authentication       => :cram_md5,
     :enable_starttls_auto => true
   }

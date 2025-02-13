@@ -11,7 +11,7 @@
   <%= f.input :subject, :label => 'Subject' %><br />
   <%= f.input :content, :label => 'Your message -- all HTML will be stripped. Limit 64KiB.', :input_html => { :class => 'full-width', :rows => 20 } %><br />
   
-  <div class='g-recaptcha' data-sitekey='<%= Rails.application.secrets[:recaptcha][:mailer][:site_key] %>' data-theme='dark'></div>
+  <div class='g-recaptcha' data-sitekey='<%= Rails.application.credentials[:recaptcha][:mailer][:site_key] %>' data-theme='dark'></div>
   <br />
 
   <%= f.button :submit, 'Send Message' %>

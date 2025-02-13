@@ -73,6 +73,7 @@ feature 'Create a preorder for a project' do
   end
 
   scenario 'User tries to preorder an invalid project' do
-    expect { visit new_preorder_path('invalid_project_id') }.to raise_exception(ActiveRecord::RecordNotFound)
+    visit new_preorder_path('invalid_project_id')
+    expect(page).to have_text("Couldn't find Project")
   end
 end

@@ -23,11 +23,13 @@
 /config/secrets.yml
 
 /public/assets/**
-# Ignore master key for decrypting credentials and more.
-/config/master.key
 
 # Ignore editor tempfiles
 *~
 
 # Ignore SimpleCov coverage reporting
 /coverage/
+
+# Ignore Rails credentials keys
+/config/credentials/*.key
+/config/master.key

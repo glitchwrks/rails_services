@@ -33,8 +33,5 @@ module RailsServices
     config.action_controller.allow_forgery_protection = false
 
     config.active_record.primary_key = :uuid
-
-    # Use new default behavior in Rails 6.1 +
-    config.active_record.legacy_connection_handling = false
   end
 end

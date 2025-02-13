@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 7.0.4'
+gem 'rails', '~> 7.1'
 gem 'propshaft'
 gem 'mysql2'
 gem 'puma'
@@ -9,14 +9,14 @@ gem 'puma'
 gem 'pkg-config'
 
 gem 'simple_form'
-gem 'sanitize', '~> 6.0.2'
+gem 'sanitize'
 gem 'uuidtools'
-gem 'bcrypt', '~> 3.1'
+gem 'bcrypt'
  
 group :test do
-  gem 'rspec-rails', '~> 6.0'
-  gem 'factory_bot_rails', '~> 6.2'
-  gem 'shoulda-matchers', '~> 5.2'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
   gem 'capybara'
   gem 'simplecov'
 end

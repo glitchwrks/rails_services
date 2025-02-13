@@ -1,4 +1,5 @@
 require 'bundler/setup'
+require 'logger' # Fix concurrent-ruby removing logger dependency
 require 'factory_bot_rails'
 require_relative 'support/helpers/basic_auth'
 
