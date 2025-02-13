@@ -92,8 +92,8 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
-  # Currently living at /ng on the server
-  config.relative_url_root = '/ng'
-  config.root_directory = '/ng'
-  config.assets.prefix = '/ng/assets'
+  # Adjust for situations where the application is deployed in a subdirectory
+  config.relative_url_root = '/'
+  config.root_directory = '/'
+  config.assets.prefix = '/assets'
 end
