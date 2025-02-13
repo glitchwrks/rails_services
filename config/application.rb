@@ -33,5 +33,8 @@ module RailsServices
     config.action_controller.allow_forgery_protection = false
 
     config.active_record.primary_key = :uuid
+
+    # Opt in to Rails 8.1 timezone behavior
+    config.active_support.to_time_preserves_timezone = :zone
   end
 end

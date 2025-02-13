@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 7.1'
+gem 'rails', '~> 8.0.1'
 gem 'propshaft'
 gem 'mysql2'
 gem 'puma'
