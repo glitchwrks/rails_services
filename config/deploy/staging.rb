@@ -12,4 +12,4 @@ set :linked_files, %w{config/database.yml config/credentials/production.key}
 
 before 'deploy:assets:precompile', 'configure:development_credentials'
 
-# after 'deploy', 'unicorn:restart'
+after 'deploy', 'puma:restart'

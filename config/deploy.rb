@@ -22,7 +22,7 @@ namespace :puma do
   desc 'Restart Puma via rc-script' 
   task :restart do  
     on roles(:web) do
-      execute 'doas /etc/rc.d/counters restart'
+      execute 'doas /etc/rc.d/rails_services restart'
     end  
   end
 end
