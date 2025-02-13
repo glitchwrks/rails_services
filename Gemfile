@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 7.0.4'
 gem 'propshaft'
 gem 'mysql2'
-gem 'unicorn'
+gem 'puma'
 
 # Bring in pkg-config for libxslt on OpenBSD
 gem 'pkg-config'
@@ -26,8 +26,6 @@ group :development do
   gem 'bcrypt_pbkdf'
   gem 'spring'
   gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
-  gem 'capistrano-rvm'
   gem 'ed25519'
   gem 'rubocop-rspec'
   gem 'webrick'
