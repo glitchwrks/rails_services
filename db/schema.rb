@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2020_06_27_181337) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_17_171544) do
   create_table "application_settings", id: { type: :string, limit: 36 }, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -30,13 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2020_06_27_181337) do
     t.boolean "suspicious"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
-  end
-
-  create_table "pastes", id: { type: :string, limit: 36 }, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
-    t.string "name", limit: 8, null: false
-    t.text "content", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "preorders", id: { type: :string, limit: 36 }, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
@@ -110,5 +103,4 @@ ActiveRecord::Schema[7.0].define(version: 2020_06_27_181337) do
     t.datetime "updated_at", precision: nil, null: false
     t.boolean "api_access"
   end
-
 end
