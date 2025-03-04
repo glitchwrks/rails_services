@@ -12,6 +12,8 @@ gem 'simple_form'
 gem 'sanitize'
 gem 'uuidtools'
 gem 'bcrypt'
+
+gem 'uri', '>= 1.0.3'
  
 group :test do
   gem 'rspec-rails'
