@@ -14,6 +14,7 @@ gem 'uuidtools'
 gem 'bcrypt'
 
 gem 'uri', '>= 1.0.3'
+gem 'nokogiri', '>= 1.18.3'
  
 group :test do
   gem 'rspec-rails'
