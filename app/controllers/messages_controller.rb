@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_parameters.merge(:address => request.remote_ip))
 
     if @message.valid? && verify_recaptcha
-      processor = ProcessMessageService.new(@message).execute
+      ProcessMessageService.new(@message).execute
       redirect_to success_messages_path
     else
       render :new
